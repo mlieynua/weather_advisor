@@ -1,0 +1,176 @@
+@charset "UTF-8";
+html{
+   font-family: Helvetica;
+}
+.body-input{
+   background-color: #000000;           
+   background-image: url("/static/input.jpg/");
+   background-size: cover;              
+   background-attachment: fixed;        
+   background-position: center center;
+
+}
+.intro{
+   text-align: center;
+   color:white;
+   position: relative;
+   margin: auto;
+   top: 90px;
+   font-size: 2em;
+   opacity:0.9;
+   
+}
+.lang{
+   padding-top: 40px;
+   
+}
+.change-lang{
+   padding: 6px;
+   background-color: cornflowerblue;
+   font-size: 8px;
+   color: white;
+}
+#number{
+   visibility: hidden;
+}
+.inp{
+   position: relative;
+  left: 90px;
+  right: 0;
+  margin: auto;
+  top: 20px;
+  width:320px;
+   height: 30px;
+}
+.sub{
+   position: relative;
+  left: 90px;
+  right: 0;
+  margin: auto;
+  top: 20px;
+  height: 30px;
+}
+
+.body-advice{
+      background-image: url("/static/input.jpg/");
+      background-size: cover;              
+      background-attachment: fixed;        
+      background-position: center center;
+      background-blend-mode:lighten;
+}   
+   
+.main{   
+   text-align: justify;
+   min-width: 450px;
+   color: #555555 ;
+   opacity: 0.8;
+   margin: 80px 260px 50px 260px;
+   background-color: white;
+   padding: 20px 30px 30px 30px ;
+   
+}
+.main h1{
+   font-size: 25px;
+   text-align: center;
+}
+
+.temp{
+   text-align: center;
+   color: white;
+   opacity: 0.9;
+   font-size: 20px;
+   opacity: 0.9;
+   
+}
+.advice{
+   background-color: white;
+   padding: 30px;
+}
+
+.wear {
+	position: relative;
+   max-width: 600px;
+   width: 700px;
+   height: 450px;
+   margin:0 auto;
+   overflow: hidden;
+   ;
+}
+#wearmen{
+   width: 300px; /* スライドショーの幅 */
+    max-width: 100%; /* スマホで表示が欠けないように */
+    margin: 10px auto; /* 中央揃え */
+    position: relative;
+    float: right;
+
+}
+#wearwomen{
+   width: 300px; /* スライドショーの幅 */
+    max-width: 100%; /* スマホで表示が欠けないように */
+    margin: 10px auto; /* 中央揃え */
+    position: relative;
+    float: left;
+}
+
+.pic img {
+   animation: show 12s infinite; /* 12秒のスライドショーを繰り返し */
+   max-width: 100%;
+   height: auto;
+   opacity: 0;
+   position: absolute; /* 画像を重ねて表示 */
+   left: 0;
+   top: 0;
+}
+
+
+#photo1 img {
+	animation-delay: 0s;
+}
+#photo2 img {
+	animation-delay: 4s;
+}
+#photo3 img {
+	animation-delay: 8s;
+}
+@keyframes show {
+   0% {opacity: 0}
+   17% {opacity: 1}
+   33% {opacity: 1}
+   50% {opacity: 0}
+}
+
+/*.wearwomen{
+   float: right;
+}*/
+/*.wearmen{
+   float: left;
+}*/
+/*.men{
+   float: ;
+}*/
+
+.newsbycountry{
+   
+   font-size: 15px; 
+   background-color: white;
+   line-height: 30px;
+   opacity: 0.8;
+   margin: 60px 260px;
+   min-width: 400px; 
+   display:block;
+   padding: 30px 50px 50px 50px;
+   color: #555555 ;
+
+}
+ul {
+   list-style-type:none;
+}
+p {
+   text-align: center;
+   font-size: 25px;
+}
+/*.wear{
+   width: 20px;
+   height: 20px;
+   opacity: 1;
+}*/

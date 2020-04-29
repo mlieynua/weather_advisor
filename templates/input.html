@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+    <meta charset="utf-8">
+    <title>weather app</title> 
+    <link rel="stylesheet" href="static/input.css/">
+</head>
+<body class="body-input">
+    <div class="intro">
+        <h1>Welcome to Travel Advisor</h1>
+        <div class="input-space">    
+            <form action="/temperture" method="POST" >
+                <input class = "inp" type="text" name="region" placeholder="input the region you want to visit" size="30">
+                <input class="sub"type='submit' value="search">
+                <input id = 'number' type="number" name ='language' value="0">
+            </form>
+        </div>
+        <div class="lang">
+            <a class="change-lang"href="/introduction">English</a>
+            <a  class="change-lang" href="/introductionja">日本語</a>
+        </div>
+    </div>
+    
+</body>
+</html>

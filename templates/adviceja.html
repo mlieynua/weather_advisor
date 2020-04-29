@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>{{current_temp}}</title>
+        <link rel="stylesheet" href="static/input.css/">
+    </head>
+    <body class="body-advice">
+        <div class="temp">
+            <h1>{{city}}の{{time}}現在の気温は{{current_temp}}℃です。</h1>
+        </div>
+
+        <div class='main'>
+
+            {% if 56<=current_temp<=60 %}
+            <h1>極度に危険な暑さです。</h1>
+            <ul>
+                <li>特別に注意が必要です。脱水症状、熱中症、熱射病、熱痙攣の危険性が非常に高いです。
+                <li>エアコンのある室内で過ごしましょう。エアコンがなければ、直射日光を避け、風通しの良い場所で過ごしましょう。</li>    
+                <li>屋外活動は危険です。命の危険があります。</li>
+                <li>体を締め付けない、明るい色の綿素材の服を選びましょう。</li>
+            </ul>    
+                
+            {% elif 51<=current_temp<=56 and current_temp!=56 %}
+            <h1>非常に危険な暑さ</h1>
+            <ul>
+                <li>極めて注意が必要です。脱水症状、熱中症、熱射病、熱痙攣の危険性が非常に高いです。</li>
+                <li>エアコンのある室内で過ごしましょう。エアコンがなければ、直射日光を避け、風通しの良い場所で過ごしましょう。</li>
+                <li>ほとんどの屋外活動は危険です。命の危険があります。</li>
+                <li>体を締め付けない、明るい色の綿素材の服を選びましょう。</li>
+            </ul>    
+            
+            {% elif 46<=current_temp<=51 and current_temp!=51%}
+            <h1>かなり危険な暑さ</h1>
+            <ul>
+                <li>かなり注意が必要です。脱水症状、熱中症、熱射病、熱痙攣の危険性が非常に高いです。</li>
+                <li>エアコンのある室内で過ごしましょう。エアコンがなければ、直射日光を避け、風通しの良い場所で過ごしましょう。</li>
+                <li>ほとんどの屋外活動は危険です。高齢者や、乳児、持病のある方は特に注意しましょう。</li>
+                <li>体を締め付けない、明るい色の綿素材の服を選びましょう。</li>
+            </ul>
+            
+            {% elif 41<=current_temp<=46 and current_temp!=46%}
+            <h1>危険な暑さ</h1>
+            <ul>
+                <li>注意が必要です。長時間屋外で過ごす際は（特に激しい活動）、脱水症状、熱中症、熱射病、熱痙攣の危険性があります。</li>
+                <li>エアコンのある室内で過ごしましょう。エアコンがなければ、直射日光を避け、風通しの良い場所で過ごしましょう。</li>
+                <li>屋外活動を最小限にしましょう高齢者や、乳児、持病のある方は特に注意しましょう。<</li>
+                <li>体を締め付けない、明るい色の綿素材の服を選びましょう。</li>    
+            </ul>
+            
+            {% elif 38<=current_temp<=41 and current_temp!=41%}
+            <h1>非常に暑い</h1>
+            <ul>
+                <li>注意が必要です。長時間屋外で過ごす際は（特に激しい活動）、脱水症状、熱中症、熱射病、熱痙攣の危険性があります。</li>
+                <li>高齢者や、乳児、持病のある方は屋外活動を最小限にし、 エアコンのある室内で過ごしましょう。エアコンがなければ、直射日光を避け、風通しの良い場所で過ごしましょう。</li>
+                <li>体を締め付けない、明るい色の綿素材の服を選びましょう。</li>
+            </ul>
+            
+            {% elif 32<=current_temp<=38 and current_temp!=38%}
+            <h1>暑い</h1>
+            <ul>
+                <li>注意が必要です。長時間屋外で過ごす際は（特に激しい活動）、脱水症状、熱中症、熱射病、熱痙攣の恐れがあります。</li>
+                <li>高齢者や、乳児、持病のある方はできれば屋外活動を最小限にし、 エアコンのある室内で過ごしましょう。エアコンがなければ、直射日光を避け、風通しの良い場所で過ごしましょう。</li>
+                <li>半袖を選びましょう。冷房対策に羽織りものがあると良いでしょう。エアリズムを着るとよい気温です。  </li>
+            </ul>
+            
+            {% elif 26<=current_temp<=32 and current_temp!=32%}
+            <h1>暖かい</h1>
+            <ul>
+                <li>高齢者や、乳児、持病のある方はできれば屋外活動を（特に直射日光の元での）最小限にしましょう。</li>
+                <li>半袖を選びましょう。エアリズムを着るとよい気温です。</li>
+            </ul>
+            
+            {% elif 21<=current_temp<=26 and current_temp!=26%}
+            <h1>快適</h1>
+            <ul>
+                <li>理想的な気温です。長袖シャツを選ぶのがおすすめです。</li>
+            </ul>
+            
+            {% elif 17<=current_temp<=21 and current_temp!=21%}
+            <h1>快適</h1>
+            <ul>
+                <li>理想的な気温です。カーディガンorパーカーを羽織りましょう</li>
+            </ul>
+            
+            {% elif 11<=current_temp<=17 and current_temp!=17%}
+            <h1>涼しい</h1>
+            <ul>
+                <li> 薄めのセーターを着るか、薄いアウターを羽織るのが良いでしょう。ヒートテックを着てもよい気温です。</li>
+            </ul>    
+            
+            {% elif 8<=current_temp<=11 and current_temp!=11%}
+            <h1>ひんやりとした寒さ</h1>
+            <ul>
+                <li>ジャケット又はセーターがおすすめです。極暖ヒートテックを着てもよい気温です。</li>
+            </ul>    
+            
+            {% elif 4<=current_temp<=8 and current_temp!=8%}
+            <h1>ひんやりとした寒さ</h1>
+            <ul>
+                <li>冬物のコートがおすすめです。インナーも分厚いものにしましょう。超極暖ヒートテック(あれば)着てもよい気温です。</li>
+            </ul>    
+    
+            {% elif -3<=current_temp<=4 and current_temp!=4%}
+            <h1>寒い</h1>
+            <ul>
+                <li>厚めのコートorダウンが良いでしょう。マフラーと手袋の装着もおすすめです。超極暖ヒートテック(あれば)着てもよい気温です。</li>
+            </ul>    
+            
+            {% elif -14<=current_temp<=-3 and current_temp!=-3%}
+            <h1>かなり寒い</h1>
+            <ul>
+                <li>注意が必要です。高齢者や、乳児、持病のある方は防寒具などをしっかり着こんで凍傷や低体温症の予防をしましょう。</li>
+            </ul>
+            
+            {% elif -23<=current_temp<=-14 and current_temp!=14%}
+            <h1>非常に寒い</h1>
+            <ul>
+                <li>注意が必要です。</li>
+                <li>外気に皮膚をさらすと15分以内に凍傷になります。体を覆う防寒具を装着しなければ、低体温症の恐れがあります。</li>
+                <li>屋外活動の制限をしましょう。</li>
+                <li>できるだけ体を覆えるような冬服を着ましょう。</li>
+            </ul>
+            
+            {% elif -31<=current_temp<=-23 and current_temp!=23%}
+            <h1>厳しい寒さ</h1>
+            <ul>
+                <li>注意が必要です。</li>
+                <li>外気に皮膚をさらすと8分以内に凍傷になります。体を覆う防寒具を装着しなければ、低体温症の恐れがあります。</li>
+                <li>屋外活動は危険ですので、控えましょう。</li>
+                <li>できるだけ体を覆えるような厚手の冬服を着ましょう。</li>
+            </ul>    
+            
+            {% elif -41<=current_temp<=-31 and current_temp!=-31%}
+            <h1>危険な寒さ</h1>
+            <ul>
+                <li>かなり注意が必要です。</li>
+                <li>外気に皮膚をさらすと2分以内に凍傷になります。防寒具を装着しなければ、低体温症の恐れがあります。</li>
+                <li>屋外活動は危険ですので、控えましょう。</li>
+                <li>体全体を覆えるような厚手の冬服を着ましょう。</li>
+            </ul>    
+            
+            {% elif -56<=current_temp<=-41 and current_temp!=-41%}
+            <h1>非常に危険な寒さ</h1> 
+            <ul>
+                <li>非常に注意が必要です</li>
+                <li>外気に皮膚をさらすと1分以内に凍傷になります。体を覆う防寒具を装着しなければ、低体温症の恐れがあります。</li>
+                <li>屋外活動は非常に危険で、命にかかわる可能性があります。暖かい場所で過ごしてください。屋外活動がどうしても必要な場合、数分にとどめて、体全体を覆う服装で行なってください。</li>
+            </ul>    
+            
+            {% elif -67<=current_temp<=-56 and current_temp!=-56%}
+            <h1>極度に危険な寒さ</h1>
+            <ul>
+                <li>極めて注意が必要です。</li>
+                <li>外気に皮膚をさらすと30秒以内に凍傷になります。体を覆う防寒具を装着しなければ、低体温症の恐れがあります。</li>
+                <li>屋外活動は極めて危険で、命にかかわります。暖かい場所で過ごしてください。 屋外活動がどうしても必要な場合、数分にとどめて、体全体を覆う服装で行なってください。</li>
+            </ul>    
+            
+            {% elif -84<=current_temp<=-67 and current_temp!=-67 %}
+            <h1>特別に警戒が必要な寒さ</h1>
+            <ul>
+                <li>特に警戒が必要です。</li>
+                <li>外気に皮膚をさらすと20秒以内に凍傷になります。体全体を覆う防寒具を装着しなければ、低体温症になります。</li>
+                <li>屋外活動は極めて危険で、命にかかわります。暖かい場所で過ごしてください。</li>
+            </ul>
+                  
+            {% else %}
+            <div class="null">
+                <h1>out of order</h1>
+            </div>
+            {% endif %}
+    
+        </div>
+
+        <div class="wear">
+            <div id="wearmen">
+                {% if 41<=current_temp<=60 %}
+                <div id="photo1" class="pic"><img src="/static/tempishigh/tempishighmen1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempishigh/tempishighmen2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempishigh/tempishighmen3.jpg/"></div>
+                {% elif 32<=current_temp<=41 and current_temp!=41%}
+                <div id="photo1" class="pic"><img src="/static/tempis35/tempis35men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis35/tempis35men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis35/tempis35men3.jpg/"></div>
+                {% elif 27<=current_temp<=32 and current_temp!=32%}
+                <div id="photo1" class="pic"><img src="/static/tempis30/tempis30men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis30/tempis30men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis30/tempis30men3.jpg/"></div>
+                {% elif 21<=current_temp<=27 and current_temp!=27%}
+                <div id="photo1" class="pic"><img src="/static/tempis25/tempis25men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis25/tempis25men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis25/tempis25men3.jpg/"></div>
+                {% elif 17<=current_temp<=21 and current_temp!=21%}
+                <div id="photo1" class="pic"><img src="/static/tempis20/tempis20men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis20/tempis20men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis20/tempis20men3.jpg/"></div>
+                {% elif 11<=current_temp<=17 and current_temp!=17%}
+                <div id="photo1" class="pic"><img src="/static/tempis15/tempis15men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis15/tempis15men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis15/tempis15men3.jpg/"></div>
+                {% elif 8<=current_temp<=11 and current_temp!=11%}
+                <div id="photo1" class="pic"><img src="/static/tempis10/tempis10men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis10/tempis10men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis10/tempis10men3.jpg/"></div>
+                {% elif 4<=current_temp<=8 and current_temp!=8%}
+                <div id="photo1" class="pic"><img src="/static/tempis5/tempis5men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis5/tempis5men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis5/tempis5men3.jpg/"></div>
+                {% elif -3<=current_temp<=4 and current_temp!=4%}
+                <div id="photo1" class="pic"><img src="/static/tempis0/tempis0men1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis0/tempis0men2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis0/tempis0men3.jpg/"></div>
+                {% elif -31<=current_temp<=-3 and current_temp!=-3%}
+                <div id="photo1" class="pic"><img src="/static/tempislower/tempislowermen1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempislower/tempislowermen2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempislower/tempislowermen3.jpg/"></div>
+                {% elif -84<=current_temp<=-31 and current_temp!=-31 %}
+                <div id="photo1" class="pic"><img src="/static/tempislow/tempislowmen1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempislow/tempislowmen2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempislow/tempislowmen3.jpg/"></div>
+                {% endif %}
+            </div>
+            <div id="wearwomen">
+                {% if 41<=current_temp<=60 %}
+                <div id="photo1" class="pic"><img src="/static/tempishigh/tempishighwomen1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempishigh/tempishighwomen2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempishigh/tempishighwomen3.jpg/"></div>
+                {% elif 32<=current_temp<=41 and current_temp!=41%}
+                <div id="photo1" class="pic"><img src="/static/tempis35/tempis35women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis35/tempis35women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis35/tempis35women3.jpg/"></div>
+                {% elif 27<=current_temp<=32 and current_temp!=32%}
+                <div id="photo1" class="pic"><img src="/static/tempis30/tempis30women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis30/tempis30women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis30/tempis30women3.jpg/"></div>
+                {% elif 21<=current_temp<=27 and current_temp!=27%}
+                <div id="photo1" class="pic"><img src="/static/tempis25/tempis25women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis25/tempis25women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis25/tempis25women3.jpg/"></div>
+                {% elif 17<=current_temp<=21 and current_temp!=21%}
+                <div id="photo1" class="pic"><img src="/static/tempis20/tempis20women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis20/tempis20women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis20/tempis20women3.jpg/"></div>
+                {% elif 11<=current_temp<=17 and current_temp!=17%}
+                <div id="photo1" class="pic"><img src="/static/tempis15/tempis15women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis15/tempis15women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis15/tempis15women3.jpg/"></div>
+                {% elif 8<=current_temp<=11 and current_temp!=11%}
+                <div id="photo1" class="pic"><img src="/static/tempis10/tempis10women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis10/tempis10women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis10/tempis10women3.jpg/"></div>
+                {% elif 4<=current_temp<=8 and current_temp!=8%}
+                <div id="photo1" class="pic"><img src="/static/tempis5/tempis5women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis5/tempis5women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis5/tempis5women3.jpg/"></div>
+                {% elif -3<=current_temp<=4 and current_temp!=4%}
+                <div id="photo1" class="pic"><img src="/static/tempis0/tempis0women1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempis0/tempis0women2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempis0/tempis0women3.jpg/"></div>
+                {% elif -31<=current_temp<=-3 and current_temp!=-3%}
+                <div id="photo1" class="pic"><img src="/static/tempislower/tempislowerwomen1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempislower/tempislowerwomen2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempislower/tempislowerwomen3.jpg/"></div>
+                {% elif -84<=current_temp<=-31 and current_temp!=-31 %}
+                <div id="photo1" class="pic"><img src="/static/tempislow/tempislowwomen1.jpg/"></div>
+                <div id="photo2" class="pic"><img src="/static/tempislow/tempislowwomen2.jpg/"></div>
+                <div id="photo3" class="pic"><img src="/static/tempislow/tempislowwomen3.jpg/"></div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="newsbycountry">
+            <p>新着ニュース</p> 
+            <ul>
+                {% for text,alink in data %}
+                <li>
+                <a href={{alink}}>{{text}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            
+        </div>
+
+
+    </body>
+</html>
