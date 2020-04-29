@@ -4,3 +4,4 @@ ibm_watson==4.3.0
 ibm_cloud_sdk_core==1.5.1
 bs4==0.0.1
 pytz==2019.3
+gunicorn==20.0.4
