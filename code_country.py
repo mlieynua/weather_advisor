@@ -1,18 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import datetime
 from pytz import timezone
 
-# In[11]:
-
-
-country_dict={'AD': {'companyen': 'Andorra', 'companyjp': 'アンドラ', 'location': '西ヨーロッパ'},
+country_dict = {'AD': {'companyen': 'Andorra', 'companyjp': 'アンドラ', 'location': '西ヨーロッパ'},
  'AE': {'companyen': 'United+Arab+Emirates',
   'companyjp': 'アラブ首長国連邦',
   'location': '中東'},
@@ -412,41 +406,33 @@ country_dict={'AD': {'companyen': 'Andorra', 'companyjp': 'アンドラ', 'locat
  'ZW': {'companyen': 'Zimbabwe', 'companyjp': 'ジンバブエ', 'location': '南アフリカ'}}
 
 
-# In[52]:
-
-
 def code_country_en(arg):
-    country_en=country_dict[arg]['companyen']
+    country_en = country_dict[arg]['companyen']
     r = requests.get(f"https://world.einnews.com/search/{country_en}")
     soup = BeautifulSoup(r.content, "html.parser")
  
-    news_titles=[tag.text for tag in soup('a',attrs={"title"})]
-    world_news_ad='http://world.einnews.com/'
-    news_links=[tag.get('href') for tag in soup('a',attrs={"title"})]
+    news_titles = [tag.text for tag in soup('a',attrs={"title"})]
+    world_news_ad = 'http://world.einnews.com/'
+    news_links = [tag.get('href') for tag in soup('a',attrs={"title"})]
     for i in range(len(news_links)):
         if world_news_ad not in news_links[i]:
-            news_links[i]=world_news_ad+news_links[i]
-    return news_titles,news_links
+            news_links[i] = world_news_ad+news_links[i]
+    return news_titles, news_links
  
 
-
-# In[87]:
-
-
 def code_country_jp(arg):
-    country_jp=country_dict[arg]['companyjp']
-    r=requests.get(f"https://news.google.com/search?q={country_jp}&hl=ja&gl=JP&ceid=JP%3Aja")
+    country_jp = country_dict[arg]['companyjp']
+    r= requests.get(f"https://news.google.com/search?q={country_jp}&hl=ja&gl=JP&ceid=JP%3Aja")
     soup = BeautifulSoup(r.content, "html.parser")
     
-    news_titles=[tag.text for tag in soup('a',attrs={"DY5T1d"},limit=10)]
-    news_links=[tag.get('href') for tag in soup('a',attrs={"VDXfz"},limit=10)]
-    news_links=["https://news.google.com/"+news_link[2:]
-  for news_link in news_links]
-    return news_titles,news_links
+    news_titles = [tag.text for tag in soup('a',attrs={"DY5T1d"},limit=10)]
+    news_links = [tag.get('href') for tag in soup('a',attrs={"VDXfz"},limit=10)]
+    news_links = ["https://news.google.com/"+news_link[2:] for news_link in news_links]
+    return news_titles, news_links
 
-# In[88]:
+
 def utc_to(current_time):
-    timestamp_utc=str(datetime.datetime.now(timezone('UTC')))
+    timestamp_utc = str(datetime.datetime.now(timezone('UTC')))
     datetime_utc = datetime.datetime.strptime(timestamp_utc , "%Y-%m-%d %H:%M:%S.%f%z")
     datetime_jst = datetime_utc.astimezone(datetime.timezone(datetime.timedelta(seconds=current_time)))
     timestamp_jst = datetime.datetime.strftime(datetime_jst, '%Y-%m-%d %H:%M:%S.%f')
